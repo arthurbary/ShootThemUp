@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class PoolCubeMember : MonoBehaviour
+public class PoolBulletMember : MonoBehaviour
 {
     // Start is called before the first frame update
-    public PoolCube pool;
+    public PoolBullet pool;
 
     private void OnBecameInvisible(){
         pool.Kill(this);
@@ -20,7 +20,7 @@ public class PoolCubeMember : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player") || other.CompareTag("Bullet"))
+        if(other.CompareTag("Enemy"))
         {
             pool.Kill(this);
         }
