@@ -5,16 +5,18 @@ using UnityEngine;
 public class UIDisplay : MonoBehaviour
 {
     TMPro.TMP_Text text;
-    int lastCount;
+    int lastLifeCount;
+    int lastPointCount;
     Player player;
+    Enemy enemy;
     void OnEnable()
     {
-        player.onLosingLife.AddListener(UpdateCount);
+        player.onLosingLife.AddListener(UpdateLife);
     }
 
     void OnDisable()
     {
-        player.onLosingLife.RemoveListener(UpdateCount);
+        player.onLosingLife.RemoveListener(UpdateLife);
     }
     void Awake()
     {
@@ -22,11 +24,16 @@ public class UIDisplay : MonoBehaviour
         player = FindObjectOfType<Player>();
     }
 
+    void Start()
+    {
+        text.text = $"Life Count: {player.totalLife}/{player.totalLife} - Point {Point.point}";
+    }
+
     // Update is called once per frame
 
-    void UpdateCount(int life)
+    void UpdateLife(int life)
     {
-        if( lastCount != life)
+        if( lastLifeCount != life)
         {
             if (life <= 0)
             {
@@ -34,8 +41,8 @@ public class UIDisplay : MonoBehaviour
             } 
             else 
             {
-                text.text = $"Life Count: {life}/{player.totalLife}";
-                lastCount = life;
+                text.text = $"Life Count: {life}/{player.totalLife} - Point {Point.point}";
+                lastLifeCount = life;
             }
         }
     }
