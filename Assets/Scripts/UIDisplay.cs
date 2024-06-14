@@ -22,11 +22,16 @@ public class UIDisplay : MonoBehaviour
     {
         text = GetComponent<TMPro.TMP_Text>();
         player = FindObjectOfType<Player>();
+        lastLifeCount = player.totalLife;
     }
 
     void Start()
     {
         text.text = $"Life Count: {player.totalLife}/{player.totalLife} - Point {Point.point}";
+    }
+    void Update()
+    {
+        //text.text = $"Life Count: {lastLifeCount}/{player.totalLife} - Point {Point.point}";
     }
 
     // Update is called once per frame
@@ -35,6 +40,8 @@ public class UIDisplay : MonoBehaviour
     {
         if( lastLifeCount != life)
         {
+            Debug.Log("Enzo est un caca de godzilla");
+            Debug.Log("Life: " + life);
             if (life <= 0)
             {
                 text.text = "GAME OVER";

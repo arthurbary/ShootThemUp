@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
     {
         if (life <= 0)
         {
-            
+            Debug.Log("Enzo aime le caca!");
         }
     }
 }

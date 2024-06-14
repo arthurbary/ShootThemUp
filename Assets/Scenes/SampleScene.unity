@@ -343,6 +343,7 @@ GameObject:
   - component: {fileID: 339284015}
   - component: {fileID: 339284016}
   - component: {fileID: 339284017}
+  - component: {fileID: 339284018}
   m_Layer: 0
   m_Name: SpaceShip
   m_TagString: Player
@@ -479,6 +480,20 @@ MonoBehaviour:
   onLosingLife:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &339284018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339284011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32e039f4f724694986ec4c8a6f12637, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canonTransform: {fileID: 1932294844}
+  canonSpeed: 10
 --- !u!1 &382806181
 GameObject:
   m_ObjectHideFlags: 0
